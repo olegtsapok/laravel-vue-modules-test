@@ -1,0 +1,15 @@
+version: '3.8'
+name: modules
+services:
+  web:
+    image: app-name:latest
+    container_name: web-modules
+    build:
+      target: web
+      context: .
+    env_file:
+      - .env
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
