@@ -1,1 +1,1 @@
-# laravel-vue-modules-test
+laravel-vue-modules-test
