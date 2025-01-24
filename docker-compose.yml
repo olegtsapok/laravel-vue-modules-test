@@ -1,5 +1,5 @@
 version: '3.8'
-name: modules
+
 services:
   web:
     image: app-name:latest
@@ -10,6 +10,6 @@ services:
     env_file:
       - .env
     ports:
-      - "8000:80"
+      - "7000:80"
     volumes:
       - .:/var/www/html

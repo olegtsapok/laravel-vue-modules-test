@@ -36,3 +36,9 @@ RUN composer install
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
+# Install node and npm, build project files
+RUN apt-get update \
+    && apt-get install -y nodejs \
+    && apt-get install -y npm \
+    && npm install \
+    && npm run build
