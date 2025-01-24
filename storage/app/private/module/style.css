@@ -1,0 +1,18 @@
+.container {
+  position: relative;
+  width: 320px;
+  height: 480px;
+
+  border: solid #3E454B 2px;
+}
+
+#background-module {
+  position: absolute;
+
+  width: WIDTH_REPLACE%;
+  height: HEIGHT_REPLACE%;
+
+  background-color: COLOR_REPLACE;
+
+  cursor: pointer;
+}
