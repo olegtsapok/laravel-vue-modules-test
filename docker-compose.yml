@@ -11,8 +11,6 @@ services:
       - .env
     ports:
       - "7000:80"
-    volumes:
-      - .:/var/www/html
     depends_on:
       - db
   
