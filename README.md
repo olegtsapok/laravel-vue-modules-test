@@ -14,7 +14,8 @@ Deployment for Docker:
 4. Start docker
 5. Run 'docker compose build' to create container
 5. Run 'docker compose up -d' to start container
-6. Now project is available by url "http://localhost:7000/"
+6. Open container terminal and run migrations "php artisan migrate"
+7. Now project is available by url "http://localhost:7000/"
 
 
 Deployment localy:

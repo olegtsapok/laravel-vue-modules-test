@@ -37,6 +37,10 @@ RUN composer install
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Install node and npm, build project files
-RUN apt-get update \ && apt-get install -y npm \ && npm install \
-     && npm run build \ && php artisan migrate
+# Install npm, build project files
+RUN apt-get update 
+RUN apt-get install -y npm 
+RUN npm install 
+RUN npm install -D vite
+RUN npm run build
+
