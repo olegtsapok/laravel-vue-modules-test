@@ -4,7 +4,8 @@ FROM php:8.2-apache as web
 # Install Additional System Dependencies
 RUN apt-get update && apt-get install -y \
     libzip-dev \
-    zip
+    zip \
+    default-mysql-client
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -37,8 +38,5 @@ RUN composer install
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Install node and npm, build project files
-RUN apt-get update \
-    && apt-get install -y nodejs \
-    && apt-get install -y npm \
-    && npm install \
-    && npm run build
+RUN apt-get update \ && apt-get install -y npm \ && npm install \
+     && npm run build \ && php artisan migrate
