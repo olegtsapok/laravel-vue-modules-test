@@ -31,9 +31,6 @@ WORKDIR /var/www/html
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Install project dependencies
-RUN composer install
-
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
@@ -41,6 +38,9 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 RUN apt-get update 
 RUN apt-get install -y npm 
 RUN npm install 
-RUN npm install -D vite
+
+RUN apt-get update 
+RUN npm install -y vite
+RUN composer install
 RUN npm run build
 
