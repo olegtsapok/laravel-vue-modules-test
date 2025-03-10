@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('modules');
+    return view('pages');
 });
 
 Route::get('/welcome', function () {

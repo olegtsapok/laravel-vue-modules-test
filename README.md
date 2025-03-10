@@ -24,7 +24,7 @@ Deployment localy:
 3. Create '.env' file from '.env.sqlite'
 4. Load vendors "composer install"
 5. Create database and tables "php artisan migrate"
-6. Build vuejs files "npm run build"
+6. Install npm and build vuejs files "npm install && npm run build"
 7. Run project as server "php artisan serve"
 8. Now project is available by url "http://127.0.0.1:8000"
 

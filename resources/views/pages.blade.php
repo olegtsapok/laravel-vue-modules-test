@@ -1,3 +1,3 @@
 <x-layouts.app>
-    <Modules />
+    <Pages />
 </x-layouts.app>

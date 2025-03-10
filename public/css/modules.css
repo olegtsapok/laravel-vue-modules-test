@@ -116,3 +116,12 @@
 .hidden {
     display: none!important;
 }
+
+.logo {
+    height: 46px;
+}
+
+.nav .button-block {
+    display: block;
+    width: 155px;
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AppVerk - zadanie rekrutacyjne FullStack Developer 2024</title>
+    <title>Laravel + Vuejs</title>
 
     <link rel="stylesheet" href="{{ asset('/css/modules.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/reset.css') }}">
@@ -12,6 +12,6 @@
 
   </head>
   <body class="body" id="app">
-      {{ $slot }}
+    {{ $slot }}
   </body>
 </html>

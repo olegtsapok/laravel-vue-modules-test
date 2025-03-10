@@ -1,3 +1,30 @@
+<template>
+      <section class="pane available-modules-pane">
+        <h3>AVAILABLE MODULES</h3>
+        <button @click="selectModule" name="background" class="available-modules-pane__button button">
+          BACKGROUND
+        </button>
+        <button @click="selectModule" name="typo" class="available-modules-pane__button button">
+          TYPO
+        </button>
+      </section>
+
+      <section class="pane selected-module-pane">
+        <h3>SELECTED MODULE</h3>
+        <div :class="classSelectedModule">
+          <span>{{ selectedModuleTitle }}</span>
+        </div>
+      </section>
+
+      <section class="pane module-settings-pane">
+        <h3>MODULE SETTINGS</h3>
+
+            <BgModule v-if="selectedModule=='background'" />
+            <TypoModule v-if="selectedModule=='typo'" />
+
+      </section>
+</template>
+
 <script setup>
     import { ref } from 'vue';
     import { forceFileDownload } from '../utils.js'
@@ -32,6 +59,7 @@
             return;
         }
 
+        //alert('Done'); return;
         saveAndDownload();
     }
 
@@ -95,38 +123,8 @@
         alert(message);
         console.log(message);
     }
+
+    // add function for using in refs
+    defineExpose({ generateFiles })
 </script>
 
-<template>
-    <nav class="nav">
-      <img src="/logo.svg" alt="logo" />
-      <button @click="generateFiles" class="button">GENERATE FILES</button>
-    </nav>
-
-    <main class="main">
-      <section class="pane available-modules-pane">
-        <h3>AVAILABLE MODULES</h3>
-        <button @click="selectModule" name="background" class="available-modules-pane__button button">
-          BACKGROUND
-        </button>
-        <button @click="selectModule" name="typo" class="available-modules-pane__button button">
-          TYPO
-        </button>
-      </section>
-
-      <section class="pane selected-module-pane">
-        <h3>SELECTED MODULE</h3>
-        <div :class="classSelectedModule">
-          <span>{{ selectedModuleTitle }}</span>
-        </div>
-      </section>
-
-      <section class="pane module-settings-pane">
-        <h3>MODULE SETTINGS</h3>
-
-            <BgModule v-if="selectedModule=='background'" />
-            <TypoModule v-if="selectedModule=='typo'" />
-
-      </section>
-    </main>
-</template>

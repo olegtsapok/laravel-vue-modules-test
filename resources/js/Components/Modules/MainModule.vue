@@ -6,8 +6,8 @@
                 id="clickout"
                 type="text"
                 name="clickout"
-                placeholder="https://appverk.com"
-                value="https://appverk.com"
+                placeholder="https://sitename.com"
+                value="https://sitename.com"
               />
             </div>
         </div>
