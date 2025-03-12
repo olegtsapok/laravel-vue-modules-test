@@ -6,7 +6,10 @@
                 <a href="#" @click="selectMenu('dashboard')">Dashboard</a>
               </span> |
               <span>
-                <a href="#" @click="selectMenu('modules')">Modules</a>
+                <a href="#" @click="selectMenu('modules')">Modules</a> |
+              </span>
+              <span>
+                <a href="#" @click="logout">Logout</a>
               </span>
             </div>
         </template>
@@ -31,5 +34,10 @@
 
     function selectMenu(menuName) {
         selectedPage.value = menuName;
+    }
+
+    function logout() {
+        localStorage.setItem('user-token', null);
+        window.location.replace("/logout");
     }
 </script>

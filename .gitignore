@@ -3,6 +3,7 @@
 /public/build
 /public/hot
 /public/storage
+/public/php_errors.log
 /storage/*.key
 /storage/pail
 /vendor
@@ -15,6 +16,7 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+php_errors.log
 /auth.json
 /.fleet
 /.idea

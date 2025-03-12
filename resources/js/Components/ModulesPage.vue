@@ -27,7 +27,7 @@
 
 <script setup>
     import { ref } from 'vue';
-    import { forceFileDownload } from '../utils.js'
+    import { forceFileDownload, hadleResponseError } from '../utils.js'
     
     const selectedModule = ref('');
     const selectedModuleTitle = ref('');
@@ -105,26 +105,7 @@
         });
     }
 
-    /**
-     * Handle api error response
-     **/
-    function hadleResponseError(error) {
-        let message = null;
-        if (error.response.data.message) {
-            message = error.response.data.message;
-        } else if (error.message) {
-            message = error.message;
-        }
-
-        if (!message) {
-            message = 'Error during API request';
-        }
-
-        alert(message);
-        console.log(message);
-    }
-
-    // add function for using in refs
+    // add function for using in parent refs
     defineExpose({ generateFiles })
 </script>
 
