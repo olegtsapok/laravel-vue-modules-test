@@ -1,10 +1,10 @@
 <template>
       <section class="pane available-modules-pane">
         <h3>AVAILABLE MODULES</h3>
-        <button @click="selectModule" name="background" class="available-modules-pane__button button">
+        <button @click="selectModule" name="BgModule" class="available-modules-pane__button button">
           BACKGROUND
         </button>
-        <button @click="selectModule" name="typo" class="available-modules-pane__button button">
+        <button @click="selectModule" name="TypoModule" class="available-modules-pane__button button">
           TYPO
         </button>
       </section>
@@ -18,16 +18,22 @@
 
       <section class="pane module-settings-pane">
         <h3>MODULE SETTINGS</h3>
-
-            <BgModule v-if="selectedModule=='background'" />
-            <TypoModule v-if="selectedModule=='typo'" />
-
+            <KeepAlive>
+                <BgModule v-if="selectedModule=='BgModule'" />
+            </KeepAlive>
+            <KeepAlive>
+                <TypoModule v-if="selectedModule=='TypoModule'" />
+            </KeepAlive>
       </section>
 </template>
 
 <script setup>
+    import TypoModule from '../Components/Modules/TypoModule.vue'
+    import BgModule from '../Components/Modules/BgModule.vue'
+
     import { ref } from 'vue';
     import { forceFileDownload, hadleResponseError } from '../utils.js'
+
     
     const selectedModule = ref('');
     const selectedModuleTitle = ref('');
@@ -54,7 +60,7 @@
             return;
         }
 
-        if (selectedModule.value == 'typo') {
+        if (selectedModule.value == 'TypoModule') {
             alert(`Generating files for module ${selectedModuleTitle.value} is not implemented`);
             return;
         }

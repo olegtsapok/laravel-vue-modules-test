@@ -14,3 +14,7 @@
         </div>
     </div>
 </template>
+
+<script setup>
+    import MainModule from './MainModule.vue'
+</script>
